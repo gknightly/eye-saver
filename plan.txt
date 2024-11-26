@@ -1,0 +1,15 @@
+XApp runs through its event loop.
+The EventScheduler sends it a message when it's time to start a break or when
+the user ends one early.
+When the program is booted up, it grabs the configuration files and configures
+itself for
+    messages
+    rules
+
+rules are json:
+{
+    priority: <integer>,
+    override: <bool>,
+    start: <seconds>,
+    end: <seconds>,
+}
