@@ -1,5 +1,6 @@
 #include "WindowManager.hpp"
 #include "font.hpp"
+#include "shaders.hpp"
 
 GLuint WindowManager::compileShader(const char* source, GLenum type)
 {
