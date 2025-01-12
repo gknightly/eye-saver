@@ -12,10 +12,10 @@ private:
     std::vector<Display> displays;
     std::vector<Window> windows;
 
-    startBreak();
+    void startBreak();
 
-    getDisplays();
-    readConfig();
+    void getDisplays();
+    void readConfig();
 };
 
 #endif

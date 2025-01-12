@@ -1,6 +1,10 @@
 #ifndef __WINDOW_HPP__
 #define __WINDOW_HPP__
 
+#include <vector>
+
+#include "Message.hpp"
+
 class Window
 {
 public:
@@ -10,8 +14,8 @@ public:
 private:
     std::vector<Message> messages;
 
-    hide();
-    setFullScreen();
+    void hide();
+    void setFullScreen();
 };
 
 #endif
