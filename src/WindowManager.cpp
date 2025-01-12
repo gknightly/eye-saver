@@ -1,4 +1,5 @@
 #include "WindowManager.hpp"
+#include "font.hpp"
 
 GLuint WindowManager::compileShader(const char* source, GLenum type)
 {
@@ -122,9 +123,9 @@ WindowManager::WindowManager()
     }
 
     FT_Face face;
-    if (FT_New_Face(ft, "assets/fonts/Mx437_IBM_VGA_8x16.ttf", 0, &face)) {
-        glfwTerminate();
-        throw std::runtime_error("Failed to load font.");
+    if (FT_New_Memory_Face(ft, Mx437_IBM_VGA_8x16_ttf, Mx437_IBM_VGA_8x16_ttf_len, 0, &face)) {
+        FT_Done_FreeType(ft);
+        throw std::runtime_error("Failed to load font from memory.");
     }
 
     FT_Set_Pixel_Sizes(face, 0, 48);
